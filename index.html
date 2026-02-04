@@ -1,58 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Meri Mano 💖</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Meri Mano 💖</title>
 
-<style>
-body {
-  background: linear-gradient(135deg, #ffdee9, #b5fffc);
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-img {
-  width: 120px;
-  margin: 10px;
-  border-radius: 15px;
-}
-</style>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    #message {
+      font-size: 18px;
+      margin: 15px 0;
+      min-height: 40px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 22px;
+      margin: 10px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    #noBtn {
+      background-color: #ddd;
+    }
+
+    img {
+      max-width: 90%;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Will you be my Valentine, meri mano? 🥺💘</h1>
+  <h1>Will you be my Valentine, meri mano? 🥺💖</h1>
 
-<!-- Real Images -->
-<div>
-  <img src="https://i.imgur.com/5RZMpVv.png" alt="Teddy Bear 🧸">
-  <img src="https://i.imgur.com/pD5B5pF.png" alt="Kitty 🐱">
-</div>
+  <p id="message"></p>
 
-<p id="message"></p>
+  <button id="yesBtn" onclick="yesClicked()">YES 💘</button>
+  <button id="noBtn" onclick="noClicked()">NO 😭</button>
 
-<button onclick="yesClicked()">YES 💖</button>
-<button onclick="noClicked()">NO 😭</button>
+  <script>
+    let noCount = 0;
+    let yesSize = 18;
 
-<script>
-let noCount = 0;
-const noMessages = [
-  "Don’t be so cruel, mano 🥺",
-  "Please meri kitty 😭",
-  "I love you naww 💔",
-  "Why did you click no again? 😭😭",
-  "Mano pleaseee 🧸💘"
-];
+    const noMessages = [
+      "Don’t be so cruel, mano 🥺",
+      "Please meri kitty 😭",
+      "I love you naww 💔",
+      "Why did you click no again? 😭😭",
+      "Mano pleaseee 🥺💖",
+      "Ab toh haan bol do na 😔"
+    ];
 
-function noClicked() {
-  document.getElementById("message").innerText = noMessages[noCount % noMessages.length];
-  noCount++;
-}
+    function noClicked() {
+      document.getElementById("message").innerText =
+        noMessages[noCount % noMessages.length];
 
-function yesClicked() {
-  document.body.innerHTML = "<h1>YAYYYY 💖🥰</h1><p>My mano said YESSS 😭❤️ I love meri mano 💘</p>";
-}
-</script>
+      yesSize += 6;
+      document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+
+      noCount++;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <h1>YAYYYY 💖😭</h1>
+        <p style="font-size:20px;">
+          My mano said YESSS 🥹❤️<br>
+          I love meri mano 💘
+        </p>
+        <img src="https://i.pinimg.com/originals/58/7a/33/587a3363f98c2c7b56f3c8a62b0a45a5.jpg" alt="Love Image">
+      `;
+    }
+  </script>
 
 </body>
 </html>
