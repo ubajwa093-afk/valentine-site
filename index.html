@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#yes {
+  background: hotpink;
+  color: white;
+}
+
+#no {
+  background: lightgray;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h2>Will you be my Valentine? ❤️</h2>
+  <button id="yes" onclick="yes()">Yes 💖</button>
+  <button id="no" onclick="no()">No 😒</button>
+</div>
+
+<script>
+let size = 1;
+
+function no() {
+  size += 0.3;
+  document.getElementById("yes").style.transform = `scale(${size})`;
+}
+
+function yes() {
+  document.getElementById("card").innerHTML =
+    "<h2>YAYYY 💕</h2><p>You’re my Valentine ❤️</p>";
+}
+</script>
+
+</body>
+</html>
