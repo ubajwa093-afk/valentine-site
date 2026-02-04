@@ -1,106 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Meri Mano ❤️</title>
+<title>For Meri Mano 💖</title>
 
 <style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #ff8fab, #ffc2d1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-  }
-
-  .card {
-    background: white;
-    padding: 30px 25px;
-    border-radius: 18px;
-    text-align: center;
-    width: 90%;
-    max-width: 360px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-  }
-
-  h2 {
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 15px;
-    min-height: 40px;
-  }
-
-  button {
-    padding: 14px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 12px;
-    margin: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  #yesBtn {
-    background: #ff4d6d;
-    color: white;
-    font-weight: bold;
-  }
-
-  #noBtn {
-    background: #e0e0e0;
-  }
+body {
+  background: linear-gradient(135deg, #ffdee9, #b5fffc);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+img {
+  width: 120px;
+  margin: 10px;
+  border-radius: 15px;
+}
 </style>
 </head>
 
 <body>
 
-<div class="card" id="card">
-  <h2>Will you be my Valentine, meri mano? ❤️</h2>
-  <p id="message"></p>
-  <button id="yesBtn" onclick="yesClicked()">Yes 💖</button>
-  <button id="noBtn" onclick="noClicked()">No 😒</button>
+<h1>Will you be my Valentine, meri mano? 🥺💘</h1>
+
+<!-- Real Images -->
+<div>
+  <img src="https://i.imgur.com/5RZMpVv.png" alt="Teddy Bear 🧸">
+  <img src="https://i.imgur.com/pD5B5pF.png" alt="Kitty 🐱">
 </div>
 
+<p id="message"></p>
+
+<button onclick="yesClicked()">YES 💖</button>
+<button onclick="noClicked()">NO 😭</button>
+
 <script>
-  let yesScale = 1;
-  let noCount = 0;
+let noCount = 0;
+const noMessages = [
+  "Don’t be so cruel, mano 🥺",
+  "Please meri kitty 😭",
+  "I love you naww 💔",
+  "Why did you click no again? 😭😭",
+  "Mano pleaseee 🧸💘"
+];
 
-  const noMessages = [
-    "Don’t be so cruel, mano 🥺",
-    "Please meri kitty 😭",
-    "I love you naww 🥺",
-    "Why did you click no again? 😭😭",
-    "Mano pleaseee 😢",
-    "You’re breaking my heart 😔",
-    "Just say yes already 😭💘"
-  ];
+function noClicked() {
+  document.getElementById("message").innerText = noMessages[noCount % noMessages.length];
+  noCount++;
+}
 
-  function noClicked() {
-    // Increase YES size
-    yesScale += 0.25;
-    document.getElementById("yesBtn").style.transform = `scale(${yesScale})`;
-
-    // Change message
-    const message = noMessages[noCount % noMessages.length];
-    document.getElementById("message").innerText = message;
-
-    noCount++;
-  }
-
-  function yesClicked() {
-    document.getElementById("card").innerHTML = `
-      <h2>YAYYYY 💖🥰</h2>
-      <p style="font-size:16px;">
-        My mano said YESSS 😭❤️<br>
-        I love meri mano 💘
-      </p>
-    `;
-  }
+function yesClicked() {
+  document.body.innerHTML = "<h1>YAYYYY 💖🥰</h1><p>My mano said YESSS 😭❤️ I love meri mano 💘</p>";
+}
 </script>
 
 </body>
